@@ -225,8 +225,9 @@ void Bar::render()
 	_x = 0;
 
 	renderTags();
-	setColorScheme(_selected ? colorActive : colorInactive);
+	setColorScheme(colorActive);
 	renderComponent(_layoutCmp);
+	setColorScheme(colorInactive);
 	renderComponent(_titleCmp);
 	renderStatus();
 
@@ -241,6 +242,9 @@ void Bar::render()
 void Bar::renderTags()
 {
 	for (auto &tag : _tags) {
+		if (!(tag.state & (TagState::Active | TagState::Urgent)) && tag.numClients < 1) {
+			continue;
+		}
 		setColorScheme(
 			tag.state & TagState::Active ? colorActive : colorInactive,
 			tag.state & TagState::Urgent);
