@@ -156,7 +156,12 @@ void Bar::setTitle(const std::string& title)
 }
 void Bar::setStatus(const std::string& status)
 {
-	_statusCmp.setText(status);
+	if (_selected) {
+		_statusCmp.setText(status);
+	}
+	else {
+		_statusCmp.setText("");
+	}
 }
 
 void Bar::invalidate()
