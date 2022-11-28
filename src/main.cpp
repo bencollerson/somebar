@@ -307,6 +307,7 @@ static void handleStdin(const std::string& line)
 		uint32_t selected;
 		stream >> selected;
 		mon->bar.setSelected(selected);
+		mon->bar.setStatus(lastStatus);
 		if (selected) {
 			selmon = &*mon;
 		} else if (selmon == &*mon) {
