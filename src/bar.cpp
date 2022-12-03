@@ -269,15 +269,6 @@ void Bar::renderTags()
 			tag.state & TagState::Active ? colorActive : colorInactive,
 			tag.state & TagState::Urgent);
 		renderComponent(tag.component);
-		auto indicators = std::min(tag.numClients, static_cast<int>(_bufs->height/2));
-		for (auto ind = 0; ind < indicators; ind++) {
-			auto w = ind == tag.focusedClient ? 7 : 1;
-			cairo_move_to(_painter, tag.component.x, ind*2+0.5);
-			cairo_rel_line_to(_painter, w, 0);
-			cairo_close_path(_painter);
-			cairo_set_line_width(_painter, 1);
-			cairo_stroke(_painter);
-		}
 	}
 }
 
