@@ -14,6 +14,8 @@ constexpr const char* font = "mono 10";
 
 constexpr ColorScheme colorInactive = {Color(0xbb, 0xbb, 0xbb), Color(0x22, 0x22, 0x22)};
 constexpr ColorScheme colorActive = {Color(0xbb, 0xbb, 0xbb), Color(0x22, 0x33, 0x44)};
+constexpr ColorScheme colorUrgentInactive = {Color(0xfd, 0x97, 0x1f), Color(0x22, 0x22, 0x22)};
+constexpr ColorScheme colorUrgentActive = {Color(0xfd, 0x97, 0x1f), Color(0x22, 0x33, 0x44)};
 constexpr const char* termcmd[] = {"foot", nullptr};
 
 static std::vector<std::string> tagNames = {

@@ -265,9 +265,12 @@ void Bar::renderTags()
 		if (!(tag.state & (TagState::Active | TagState::Urgent)) && tag.numClients < 1) {
 			continue;
 		}
-		setColorScheme(
-			tag.state & TagState::Active ? colorActive : colorInactive,
-			tag.state & TagState::Urgent);
+		if (tag.state & TagState::Urgent) {
+			setColorScheme(tag.state & TagState::Active ? colorUrgentActive : colorUrgentInactive);
+		}
+		else {
+			setColorScheme(tag.state & TagState::Active ? colorActive : colorInactive);
+		}
 		renderComponent(tag.component);
 	}
 }
