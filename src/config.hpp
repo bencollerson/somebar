@@ -16,7 +16,7 @@ constexpr ColorScheme colorInactive = {Color(0xbb, 0xbb, 0xbb), Color(0x22, 0x22
 constexpr ColorScheme colorActive = {Color(0xbb, 0xbb, 0xbb), Color(0x22, 0x33, 0x44)};
 constexpr ColorScheme colorUrgentInactive = {Color(0xfd, 0x97, 0x1f), Color(0x22, 0x22, 0x22)};
 constexpr ColorScheme colorUrgentActive = {Color(0xfd, 0x97, 0x1f), Color(0x22, 0x33, 0x44)};
-constexpr const char* termcmd[] = {"foot", nullptr};
+constexpr const char* termcmd[] = {"x-terminal-emulator", nullptr};
 
 static std::vector<std::string> tagNames = {
 	"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
