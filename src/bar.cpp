@@ -161,22 +161,21 @@ void Bar::setTitle(const std::string& title)
 }
 void Bar::setStatus(const std::string& status)
 {
-	if (_selected) {
-		char *buf;
-		GError *error = NULL;
-		PangoAttrList *attrs;
-		if (pango_parse_markup(status.c_str(), -1, 0, &attrs, &buf, NULL, &error)) {
-			_statusCmp.setText(buf);
-			_statusCmp.setAttributes(attrs);
-		}
-		else {
-			_statusCmp.setText(error->message);
-		}
-	}
-	else {
+	if (!_selected) {
 		_statusCmp.setText("");
+		return;
 	}
 
+	char *buf;
+	GError *error = NULL;
+	PangoAttrList *attrs;
+	if (pango_parse_markup(status.c_str(), -1, 0, &attrs, &buf, NULL, &error)) {
+		_statusCmp.setText(buf);
+		_statusCmp.setAttributes(attrs);
+	}
+	else {
+		_statusCmp.setText(error->message);
+	}
 }
 
 void Bar::invalidate()
