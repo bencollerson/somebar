@@ -18,11 +18,7 @@ constexpr ColorScheme colorUrgentInactive = {Color(0xfd, 0x97, 0x1f), Color(0x22
 constexpr ColorScheme colorUrgentActive = {Color(0xfd, 0x97, 0x1f), Color(0x22, 0x33, 0x44)};
 constexpr const char* termcmd[] = {"x-terminal-emulator", nullptr};
 
-static std::vector<std::string> tagNames = {
-	"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-	"n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-};
-
+constexpr int tagCount = 26;
 constexpr Button buttons[] = {
 	{ ClkStatusText,   BTN_RIGHT,  spawn,      {.v = termcmd} },
 };

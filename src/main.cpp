@@ -316,7 +316,7 @@ static void handleStdin(const std::string& line)
 	} else if (command == "tags") {
 		uint32_t occupied, tags, clientTags, urgent;
 		stream >> occupied >> tags >> clientTags >> urgent;
-		for (auto i=0u; i<tagNames.size(); i++) {
+		for (auto i=0u; i<tagCount; i++) {
 			auto tagMask = 1 << i;
 			int state = TagState::None;
 			if (tags & tagMask)
