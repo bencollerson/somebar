@@ -201,9 +201,10 @@ void Bar::click(Monitor* mon, int x, int, int btn)
 	} else if (x > _layoutCmp.x) {
 		control = ClkLayoutSymbol;
 	} else for (int tag = _tags.size()-1; tag >= 0; tag--) {
-		if (x > _tags[tag].component.x) {
+		if (_tags[tag].component.x != HIDDEN_TAG
+			&& x > _tags[tag].component.x) {
 			control = ClkTagBar;
-			arg.ui = 1<<tag;
+			arg.ui = tag;
 			argp = &arg;
 			break;
 		}
@@ -262,6 +263,7 @@ void Bar::renderTags()
 {
 	for (auto &tag : _tags) {
 		if (!(tag.state & (TagState::Active | TagState::Urgent)) && tag.numClients < 1) {
+			tag.component.x = HIDDEN_TAG;
 			continue;
 		}
 		if (tag.state & TagState::Urgent) {

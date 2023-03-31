@@ -10,6 +10,8 @@
 #include "common.hpp"
 #include "shm_buffer.hpp"
 
+#define HIDDEN_TAG (-1)
+
 class BarComponent {
 	std::unique_ptr<std::string> _text;
 public:

@@ -85,6 +85,12 @@ static int statusFifoFd {-1};
 static int statusFifoWriter {-1};
 static bool quitting {false};
 
+void view(Monitor& m, const Arg& arg)
+{
+	char tag = static_cast<char>('a' + arg.ui);
+	system((std::string("dwl-keys view ") + tag).c_str());
+}
+
 void spawn(Monitor&, const Arg& arg)
 {
 	if (fork() == 0) {
