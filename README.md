@@ -1,3 +1,25 @@
+# forked version of somebar
+
+## Extra dependencies
+
+* my dwl build (https://github.com/bencollerson/dwl)
+* wtype
+
+```
+sudo apt install wtype
+```
+
+## Notable patches
+
+* clickable tags
+* a to z tags
+* markup in status
+* hex colours
+* status on active monitor
+* cleaner tags without indicator
+* hide empty tags
+
+
 # somebar - dwm-like bar for dwl
 
 ![Screenshot](screenshot.png)
