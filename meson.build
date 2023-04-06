@@ -1,5 +1,5 @@
 project('somebar', ['c', 'cpp'],
-	version: '0.1.0',
+	version: run_command('git', 'describe', '--tags').stdout().strip(),
 	default_options: [
 	    'cpp_std=c++17',
 	    'cpp_args=-Wno-parentheses',
