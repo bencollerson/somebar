@@ -1,5 +1,7 @@
 # forked version of somebar
 
+![Screenshot](screenshot-patched.png)
+
 ## Extra dependencies
 
 * my dwl build (https://github.com/bencollerson/dwl)
