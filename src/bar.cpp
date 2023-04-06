@@ -166,6 +166,11 @@ void Bar::setStatus(const std::string& status)
 		return;
 	}
 
+	if (status.length() == 0) {
+		_statusCmp.setText("somebar " SOMEBAR_VERSION);
+		return;
+	}
+
 	char *buf;
 	GError *error = NULL;
 	PangoAttrList *attrs;
