@@ -44,6 +44,6 @@ constexpr const char* termcmd[] = {"x-terminal-emulator", nullptr};
 
 constexpr int tagCount = 26;
 constexpr Button buttons[] = {
-	{ ClkTagBar,     BTN_LEFT,   view, {0} },
+	{ ClkTagBar,     BTN_LEFT, view,  {0} },
 	{ ClkStatusText, BTN_LEFT, spawn, {.v = termcmd} },
 };
