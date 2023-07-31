@@ -87,8 +87,10 @@ static bool quitting {false};
 
 void view(Monitor& m, const Arg& arg)
 {
-	char tag = static_cast<char>('a' + arg.ui);
-	system((std::string("dwl-keys view ") + tag).c_str());
+	char tag[2];
+	snprintf(tag, 2, "%c", 'a' + arg.ui);
+	if(fork() == 0)
+		execl("/bin/sh", "sh", "/usr/local/bin/dwl-keys", "view", tag, (char *) 0);
 }
 
 void spawn(Monitor&, const Arg& arg)
