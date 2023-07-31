@@ -90,7 +90,7 @@ void view(Monitor& m, const Arg& arg)
 	char tag[2];
 	snprintf(tag, 2, "%c", 'a' + arg.ui);
 	if(fork() == 0)
-		execl("/bin/sh", "sh", "/usr/local/bin/dwl-keys", "view", tag, (char *) 0);
+		execl("/bin/sh", "sh", DWLKEYS, "view", tag, (char*)NULL);
 }
 
 void spawn(Monitor&, const Arg& arg)

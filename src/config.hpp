@@ -18,6 +18,8 @@ constexpr const char* font = "mono 10";
 	((col & 0xff)) \
 )
 
+#define DWLKEYS "/usr/local/bin/dwl-keys"
+
 constexpr Color textgrey     = RGB(0xbbbbbb);
 constexpr Color backgrey     = RGB(0x222222);
 constexpr Color activeblue   = RGB(0x223344);
