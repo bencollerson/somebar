@@ -271,12 +271,11 @@ void Bar::renderTags()
 			tag.component.x = HIDDEN_TAG;
 			continue;
 		}
-		if (tag.state & TagState::Urgent) {
-			setColorScheme(tag.state & TagState::Active ? colorUrgentActive : colorUrgentInactive);
-		}
-		else {
-			setColorScheme(tag.state & TagState::Active ? colorActive : colorInactive);
-		}
+		setColorScheme(
+			(tag.state & TagState::Urgent) ?
+			(tag.state & TagState::Active ? colorUrgentActive : colorUrgentInactive) :
+			(tag.state & TagState::Active ? colorActive       : colorInactive)
+		);
 		renderComponent(tag.component);
 	}
 }
