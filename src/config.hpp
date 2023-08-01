@@ -13,9 +13,9 @@ constexpr int paddingY = 2;
 constexpr const char* font = "mono 10";
 
 #define RGB(col) Color( \
-	((col & 0xff0000) >> 16), \
-	((col & 0xff00) >> 8), \
-	((col & 0xff)) \
+	(col >> 16) & 0xff, \
+	(col >> 8) & 0xff, \
+	col & 0xff \
 )
 
 #define DWLKEYS "/usr/local/bin/dwl-keys"
