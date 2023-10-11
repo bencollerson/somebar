@@ -23,7 +23,7 @@ constexpr const char* font = "mono 10";
 constexpr Color textgrey     = RGB(0xbbbbbb);
 constexpr Color backgrey     = RGB(0x222222);
 constexpr Color activeblue   = RGB(0x223344);
-constexpr Color urgentyellow = RGB(0xfd971f);
+constexpr Color urgentred = RGB(0xf92672);
 
 constexpr ColorScheme colorInactive = {
 	textgrey,
@@ -34,11 +34,11 @@ constexpr ColorScheme colorActive = {
 	activeblue
 };
 constexpr ColorScheme colorUrgentInactive = {
-	urgentyellow,
+	urgentred,
 	backgrey
 };
 constexpr ColorScheme colorUrgentActive = {
-	urgentyellow,
+	urgentred,
 	activeblue
 };
 
